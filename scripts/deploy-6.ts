@@ -10,7 +10,7 @@ async function main() {
   const Swisstronik = await ethers.getContractFactory("Swisstronik");
   const swisstronik = await Swisstronik.deploy();
   await swisstronik.waitForDeployment();
-  console.log("Contract address 1 deployed to:", swisstronik.target);
+  console.log("Contract address 1 deployed to:", swisstronik.target, "<< Intine kie sing pertama");
 
   // proxy admin
   const ProxyAdmin = await ethers.getContractFactory("ProxyAdmin");
@@ -52,7 +52,7 @@ async function main() {
   await upgrade.wait();
 
   console.log(
-    `Response: https://explorer-evm.testnet.swisstronik.com/tx/${upgrade.hash} <- copy that for "the link to the contract implementation replacement transaction"`
+    `Response: ${upgrade.hash} <- copy that for "hash to the contract implementation replacement transaction"`
   );
 
   // await run("verify:verify", {
